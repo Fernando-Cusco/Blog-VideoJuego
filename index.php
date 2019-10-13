@@ -7,14 +7,14 @@
   <body>
 
     <!--Cabecera-->
-    <header>
+    <header id="cabecera">
       <div id="logo">
         <a href="index.php">
           Blog de Juegos
         </a>
       </div>
       <!--Menu-->
-      <nav id="nav">
+      <nav id="menu">
         <ul>
           <li>
             <a href="index.php">Inicio</a>
@@ -43,8 +43,70 @@
         </ul>
       </nav>
     </header>
-    <!--Sidebar-->
-    <!--Contenido-->
+    <div id="contenedor">
+      <!--Sidebar-->
+      <aside id="sidebar">
+        <div id="login" class="bloque">
+          <h3>Identificate</h3>
+          <form action="login.php" method="post">
+            <label for="email">Email</label>
+            <input type="email" name="email" />
+
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" />
+
+            <input type="submit" value="Entrar">
+          </form>
+        </div>
+
+        <div id="registro" class="bloque">
+          <h3>Registrarse</h3>
+          <form action="login.php" method="post">
+            <label for="nombre">Nombres</label>
+            <input type="text" name="nombre" />
+
+            <label for="apellidos">Apellidos</label>
+            <input type="text" name="apellidos" />
+
+            <label for="email">Email</label>
+            <input type="email" name="email" />
+
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" />
+
+            <input type="submit" value="Registrarse">
+          </form>
+        </div>
+
+      </aside>
+      <!--Contenido-->
+      <div id="principal">
+        <h1>Ultimas entradas</h1>
+        <article class="entrada">
+          <h2>Titulo de mi entrada</h2>
+          <p>
+            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+          </p>
+        </article>
+
+        <article class="entrada">
+          <h2>Titulo de mi entrada</h2>
+          <p>
+            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+          </p>
+        </article>
+
+        <article class="entrada">
+          <h2>Titulo de mi entrada</h2>
+          <p>
+            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+          </p>
+        </article>
+
+      </div>
+
+
+    </div>
     <!--Pie de pagina-->
 
   </body>

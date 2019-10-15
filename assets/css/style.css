@@ -1,0 +1,26 @@
+@@font-face {
+  font-family: "falaja";
+  src: url(../fonts/fuentes.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Estilos generales*/
+
+*{
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif, Helvetica, Arial;
+  text-decoration: none;
+}
+
+/*limpiar los flotados*/
+
+.clearfix {
+  clear: both;
+  float: none;
+}
+
+body {
+  background: url(../img/cubes.png) #F4F4F4;
+}

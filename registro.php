@@ -1,4 +1,5 @@
 <?php
+session_start();
   if(isset($_POST)){
     //usamos operadores ternarios evitar varios if's
     //        si existe                true                 false
@@ -45,7 +46,8 @@
       $guardarUsuario = true;
 
     } else {
-
+      $_SESSION['errores'] = $errores;
+      header('Location: index.php');
     }
   }
 ?>

@@ -2,7 +2,7 @@
   //cabecera
   require_once 'includes/cabecera.php';
 ?>
-    <div id="contenedor">
+
       <!--Sidebar-->
       <?php
       //login y registro
@@ -41,9 +41,7 @@
           <a href="#">Ver todas las entradas</a>
         </div>
       </div>
-      <div class="clearfix"></div>
-
-    </div>
+    
 
     <?php
     require_once 'includes/pie.php';

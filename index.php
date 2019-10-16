@@ -85,28 +85,36 @@
       <div id="principal">
         <h1>Ultimas entradas</h1>
         <article class="entrada">
-          <h2>Titulo de mi entrada</h2>
-          <p>
-            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-          </p>
+          <a href="#">
+            <h2>Titulo de mi entrada</h2>
+            <p>
+              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+            </p>
+          </a>
         </article>
 
         <article class="entrada">
-          <h2>Titulo de mi entrada</h2>
-          <p>
-            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-          </p>
-        </article>
+          <a href="#">
+            <h2>Titulo de mi entrada</h2>
+            <p>
+              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+            </p>
+          </a>
 
+        </article>
         <article class="entrada">
-          <h2>Titulo de mi entrada</h2>
-          <p>
-            Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-          </p>
+          <a href="#">
+            <h2>Titulo de mi entrada</h2>
+            <p>
+              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
+            </p>
+          </a>
         </article>
-
+        <div id="ver-todas">
+          <a href="#">Ver todas las entradas</a>
+        </div>
       </div>
-
+      <div class="clearfix"></div>
 
     </div>
     <!--Pie de pagina-->

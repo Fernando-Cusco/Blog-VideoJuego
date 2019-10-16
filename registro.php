@@ -1,6 +1,9 @@
 <?php
-session_start();
   if(isset($_POST)){
+    require_once('includes/conexion.php');
+    if(!isset($_SESSION)){
+      session_start();
+    }
     //usamos operadores ternarios evitar varios if's
     //        si existe                true                 false
     $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : false;
@@ -42,12 +45,23 @@ session_start();
     }
     $guardarUsuario = false;
     if(count($errores) == 0){
-      //insertamos el usuario en la tabla
       $guardarUsuario = true;
+      //insertamos el usuario en la tabla
+      //ciframos la password       mipass     tipo             numero de cifrados
+      $pass_secure = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+      //descifrar
+      //var_dump(password_verify($password, $pass_secure));
+      $sql = "insert into usuarios values(null, '$nombre', '$apellidos', '$email', '$pass_secure', CURDATE());";
+      $guardar = mysqli_query($db, $sql);
 
+      if($guardar){
+        $_SESSION['completado'] = "El registro se completo exitosamente";
+      } else {
+          $_SESSION['errores']['general'] = "Error no se pudo guardar el usuario.";
+      }
     } else {
       $_SESSION['errores'] = $errores;
-      header('Location: index.php');
     }
+    header('Location: index.php');
   }
 ?>

@@ -17,6 +17,16 @@ require_once 'includes/helpers.php';
 
   <div id="registro" class="bloque">
     <h3>Registrarse</h3>
+    <!--Mostrar errores  -->
+    <?php if(isset($_SESSION['completado'])): ?>
+      <div class="alerta alerta-exito">
+        <?= $_SESSION['completado']; ?>
+      </div>
+  <?php elseif(isset($_SESSION['errores']['general'])): ?>
+    <div class="alerta alerta-error">
+      <?= $_SESSION['errorres']['general']; ?>
+    </div>
+  <?php endif; ?>
     <form action="registro.php" method="post">
       <label for="nombre">Nombres</label>
       <input type="text" name="nombre" />
@@ -36,6 +46,7 @@ require_once 'includes/helpers.php';
 
       <input type="submit" value="Registrarse" name="submit">
     </form>
+    <?php borrarErrores(); ?>
   </div>
 
 </aside>

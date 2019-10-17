@@ -1,6 +1,3 @@
-<?php
-require_once 'includes/helpers.php';
-?>
 <aside id="sidebar">
   <?php if(isset($_SESSION['usuario'])): ?>
     <div id="user-logeado" class="bloque">

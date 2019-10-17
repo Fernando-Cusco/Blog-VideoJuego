@@ -2,8 +2,8 @@
 //conexion
 $server = 'localhost';
 $username = 'admin';
-$password = 'admin';
 $database = 'blog';
+$password = 'admin';
 $db = mysqli_connect($server, $username, $password, $database);
 
 //consulta a la db,

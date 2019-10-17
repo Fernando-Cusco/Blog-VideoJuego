@@ -1,5 +1,6 @@
 <?php
   require_once 'conexion.php';
+  require_once 'includes/helpers.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -18,26 +19,20 @@
         </a>
       </div>
       <!--Menu-->
+      <?php 
+      //obtenemos las categorias
+      $categorias = getCategorias($db);
+      ?>
       <nav id="menu">
         <ul>
           <li>
             <a href="index.php">Inicio</a>
           </li>
-          <li>
-            <a href="index.php">Accion</a>
-          </li>
-          <li>
-            <a href="index.php">Arcade</a>
-          </li>
-          <li>
-            <a href="index.php">Deportes</a>
-          </li>
-          <li>
-            <a href="index.php">Horror</a>
-          </li>
-          <li>
-            <a href="index.php">Recomendacion</a>
-          </li>
+          <?php while($categoria = mysqli_fetch_assoc($categorias)): ?>
+            <li>
+              <a href="categoria.php?id=<?=$categoria['id']?>"><?=$categoria['nombre']?></a>
+            </li>
+          <?php endwhile; ?>
           <li>
             <a href="index.php">Acerca de</a>
           </li>

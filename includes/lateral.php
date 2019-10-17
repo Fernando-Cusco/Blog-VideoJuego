@@ -5,11 +5,19 @@ require_once 'includes/helpers.php';
   <?php if(isset($_SESSION['usuario'])): ?>
     <div id="user-logeado" class="bloque">
       <h3>Bienvenido, <?= $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'] ?></h3>
+      <a href="cerrar_sesion.php" class="boton boton-verde">Publica Algo</a>
+      <a href="cerrar_sesion.php" class="boton boton-naranja">Mis Datos</a>
+      <a href="cerrar_sesion.php" class="boton">Cerrar Sesion</a>
     </div>
   <?php endif; ?>
 
   <div id="login" class="bloque">
     <h3>Identificate</h3>
+    <?php if(isset($_SESSION['error_login'])): ?>
+      <div class="alerta alerta-error">
+        <?= $_SESSION['error_login']?>
+      </div>
+    <?php endif; ?>
     <form action="login.php" method="post">
       <label for="email">Email</label>
       <input type="email" name="email" />

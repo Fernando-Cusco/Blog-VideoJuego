@@ -179,7 +179,8 @@ input[type="password"] {
 }
 
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+.boton {
   margin-top: 5px;
   margin-bottom: 5px;
   display: block;
@@ -190,6 +191,20 @@ input[type="button"] {
   cursor: pointer;
   padding: 8px;
   width: auto;
+}
+.boton {
+  text-align: center;
+  width: 100px;
+}
+
+.boton-verde {
+  background: #21b921;
+  border-color: green;
+}
+
+.boton-naranja {
+  background: orange;
+  border-color: #bd7d08;
 }
 
 input[type="text"],

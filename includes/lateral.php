@@ -6,8 +6,9 @@ require_once 'includes/helpers.php';
     <div id="user-logeado" class="bloque">
       <h3>Bienvenido, <?= $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'] ?></h3>
       <a href="cerrar_sesion.php" class="boton boton-verde">Publica Algo</a>
+      <a href="cerrar_sesion.php" class="boton">Crear Categoria</a>
       <a href="cerrar_sesion.php" class="boton boton-naranja">Mis Datos</a>
-      <a href="cerrar_sesion.php" class="boton">Cerrar Sesion</a>
+      <a href="cerrar_sesion.php" class="boton boton-rojo">Cerrar Sesion</a>
     </div>
   <?php endif; ?>
 

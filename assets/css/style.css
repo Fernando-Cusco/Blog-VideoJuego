@@ -194,12 +194,17 @@ input[type="button"],
 }
 .boton {
   text-align: center;
-  width: 100px;
+  width: 120px;
 }
 
 .boton-verde {
   background: #21b921;
   border-color: green;
+}
+
+.boton-rojo {
+  background: red;
+  border-color: #444;
 }
 
 .boton-naranja {

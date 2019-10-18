@@ -1,20 +1,25 @@
 <aside id="sidebar">
-  <?php if(isset($_SESSION['usuario'])): ?>
+  <?php if (isset($_SESSION['usuario'])) : ?>
     <div id="user-logeado" class="bloque">
-      <h3>Bienvenido, <?= $_SESSION['usuario']['nombre'].' '.$_SESSION['usuario']['apellidos'] ?></h3>
-      <a href="cerrar_sesion.php" class="boton boton-verde">Publica Algo</a>
-      <a href="cerrar_sesion.php" class="boton">Crear Categoria</a>
-      <a href="cerrar_sesion.php" class="boton boton-naranja">Mis Datos</a>
+      <h3>Bienvenido, <?= $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellidos'] ?></h3>
+      <a href="#" class="boton boton-verde">Publica Algo</a>
+      <a href="crear_categoria.php" class="boton">Crear Categoria</a>
+      <a href="#" class="boton boton-naranja">Mis Datos</a>
       <a href="cerrar_sesion.php" class="boton boton-rojo">Cerrar Sesion</a>
+      <?php if (isset($_SESSION['categoria'])) :
+              echo "<h4>" . $_SESSION['categoria'] . "</h4>";
+              unset($_SESSION['categoria']);
+            endif;
+        ?>
     </div>
   <?php endif; ?>
 
-  <?php if(!isset($_SESSION['usuario'])): ?>
+  <?php if (!isset($_SESSION['usuario'])) : ?>
     <div id="login" class="bloque">
       <h3>Identificate</h3>
-      <?php if(isset($_SESSION['error_login'])): ?>
+      <?php if (isset($_SESSION['error_login'])) : ?>
         <div class="alerta alerta-error">
-          <?= $_SESSION['error_login']?>
+          <?= $_SESSION['error_login'] ?>
         </div>
       <?php endif; ?>
       <form action="login.php" method="post">
@@ -31,15 +36,15 @@
     <div id="registro" class="bloque">
       <h3>Registrarse</h3>
       <!--Mostrar errores  -->
-      <?php if(isset($_SESSION['completado'])): ?>
+      <?php if (isset($_SESSION['completado'])) : ?>
         <div class="alerta alerta-exito">
           <?= $_SESSION['completado']; ?>
         </div>
-    <?php elseif(isset($_SESSION['errores']['general'])): ?>
-      <div class="alerta alerta-error">
-        <?= $_SESSION['errorres']['general']; ?>
-      </div>
-    <?php endif; ?>
+      <?php elseif (isset($_SESSION['errores']['general'])) : ?>
+        <div class="alerta alerta-error">
+          <?= $_SESSION['errorres']['general']; ?>
+        </div>
+      <?php endif; ?>
       <form action="registro.php" method="post">
         <label for="nombre">Nombres</label>
         <input type="text" name="nombre" />
@@ -61,5 +66,5 @@
       </form>
       <?php borrarErrores(); ?>
     </div>
-<?php endif; ?>
+  <?php endif; ?>
 </aside>

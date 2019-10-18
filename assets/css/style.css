@@ -259,3 +259,9 @@ Estilos al pie de pagina
 .alerta-exito {
   background: green;
 }
+
+.fecha {
+  color: #ccc;
+  margin-top: 5px;
+  color: #21b921;
+}

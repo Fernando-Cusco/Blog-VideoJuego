@@ -31,4 +31,14 @@ function getCategorias($db){
   return $result;
 }
 
+function getUltimasEntradas($con){
+  $sql = "SELECT * FROM entradas as e, usuarios as u where u.id = e.usuario_id order by e.id desc limit 4;";
+  $entradas = mysqli_query($con, $sql);
+  $resultado = array();
+  if($entradas && mysqli_num_rows($entradas) >= 1){
+    $resultado = $entradas;
+  }
+  return $resultado;
+}
+
 ?>

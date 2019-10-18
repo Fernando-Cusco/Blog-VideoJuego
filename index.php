@@ -11,32 +11,21 @@
       <!--Contenido-->
       <div id="principal">
         <h1>Ultimas entradas</h1>
-        <article class="entrada">
-          <a href="#">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-            </p>
-          </a>
-        </article>
-
-        <article class="entrada">
-          <a href="#">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-            </p>
-          </a>
-
-        </article>
-        <article class="entrada">
-          <a href="#">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-              Descripcion: El Lorem Ipsum fue concebido como un texto de relleno, formateado de una cierta manera para permitir la presentación de elementos gráficos en documentos, sin necesidad de una copia formal.
-            </p>
-          </a>
-        </article>
+        <?php $entradas = getUltimasEntradas($db);
+        if(!empty($entradas)):
+          while($entrada = mysqli_fetch_assoc($entradas)): ?>
+            <article class="entrada">
+              <a href="#">
+                <h2><?= $entrada['titulo'] ?></h2>
+                <p>
+                  <?= substr($entrada['descripcion'], 0, 250); ?>
+                  .....
+                </p>
+              </a>
+            </article>
+          <?php endwhile;?>
+        <?php endif;?>
+        
         <div id="ver-todas">
           <a href="#">Ver todas las entradas</a>
         </div>

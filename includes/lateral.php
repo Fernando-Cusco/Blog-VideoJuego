@@ -4,7 +4,7 @@
       <h3>Bienvenido, <?= $_SESSION['usuario']['nombre'] . ' ' . $_SESSION['usuario']['apellidos'] ?></h3>
       <a href="crear_entrada.php" class="boton boton-verde">Publica Algo</a>
       <a href="crear_categoria.php" class="boton">Crear Categoria</a>
-      <a href="#" class="boton boton-naranja">Mis Datos</a>
+      <a href="mis_datos.php" class="boton boton-naranja">Mis Datos</a>
       <a href="cerrar_sesion.php" class="boton boton-rojo">Cerrar Sesion</a>
       <?php if (isset($_SESSION['categoria'])) :
               echo "<h4>" . $_SESSION['categoria'] . "</h4>";

@@ -11,6 +11,18 @@
               unset($_SESSION['categoria']);
             endif;
         ?>
+       <?php 
+        if(isset($_SESSION['entrada'])):
+          if(!is_array($_SESSION['entrada'])):
+            echo "<h4>" . $_SESSION['entrada'] . "</h4>";
+          else:
+            foreach($_SESSION['entrada'] as $error):
+              echo "<h4>" . $error . "</h4>";
+            endforeach;  
+          endif;
+          unset($_SESSION['entrada']);
+        endif; 
+       ?> 
     </div>
   <?php endif; ?>
 

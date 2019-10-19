@@ -21,6 +21,7 @@
         if(count($errores) == 0){
             $sql = "insert into entradas values(null, $usuario, $categoria, '$titulo', '$descripcion', CURDATE());";
             $guardar = mysqli_query($db, $sql);
+            $_SESSION['entrada'] = "Entrada creada correctamente";
         } else {
             $_SESSION['entrada'] = $errores;
         }

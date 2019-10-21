@@ -11,7 +11,7 @@
       <!--Contenido-->
       <div id="principal">
         <h1>Ultimas entradas</h1>
-        <?php $entradas = getUltimasEntradas($db);
+        <?php $entradas = getAllEntradas($db);
         if(!empty($entradas)):
           while($entrada = mysqli_fetch_assoc($entradas)): ?>
             <article class="entrada">
@@ -27,9 +27,7 @@
           <?php endwhile;?>
         <?php endif;?>
         
-        <div id="ver-todas">
-          <a href="entradas.php">Ver todas las entradas</a>
-        </div>
+        
       </div>
     
 

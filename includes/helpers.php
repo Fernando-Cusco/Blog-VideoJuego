@@ -41,4 +41,14 @@ function getUltimasEntradas($con){
   return $resultado;
 }
 
+function getAllEntradas($con){
+  $sql = "SELECT e.titulo as 'titulo', e.descripcion as 'desc', c.nombre as 'categoria', e.fecha as 'fecha' from entradas as e, categorias as c where c.id = e.categoria_id order by e.id desc;";
+  $entradas = mysqli_query($con, $sql);
+  $resultado = array();
+  if($entradas && mysqli_num_rows($entradas) >= 1){
+    $resultado = $entradas;
+  }
+  return $resultado;
+}
+
 ?>

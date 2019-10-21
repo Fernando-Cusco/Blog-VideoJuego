@@ -31,6 +31,16 @@ function getCategorias($db){
   return $result;
 }
 
+function getOneCategoria($db, $id){
+  $sql = "SELECT * FROM categorias WHERE id = '$id';";
+  $categoria = mysqli_query($db, $sql);
+  $result = array();
+  if($categoria && mysqli_num_rows($categoria) == 1){
+    $result = mysqli_fetch_assoc($categoria);
+  }
+  return $result;
+}
+
 function getUltimasEntradas($con){
   $sql = "SELECT e.titulo as 'titulo', e.descripcion as 'desc', c.nombre as 'categoria', e.fecha as 'fecha' FROM entradas as e, categorias as c where c.id = e.categoria_id order by e.id desc limit 4;";
   $entradas = mysqli_query($con, $sql);
@@ -44,6 +54,17 @@ function getUltimasEntradas($con){
 function getAllEntradas($con){
   $sql = "SELECT e.titulo as 'titulo', e.descripcion as 'desc', c.nombre as 'categoria', e.fecha as 'fecha' from entradas as e, categorias as c where c.id = e.categoria_id order by e.id desc;";
   $entradas = mysqli_query($con, $sql);
+  $resultado = array();
+  if($entradas && mysqli_num_rows($entradas) >= 1){
+    $resultado = $entradas;
+  }
+  return $resultado;
+}
+
+function getAllEntradasCategoria($con, $id){
+  $sql = "SELECT e.titulo as 'titulo', e.descripcion as 'desc', e.fecha as 'fecha' from entradas as e where e.categoria_id = '$id' ORDER BY e.id  asc;";
+  $entradas = mysqli_query($con, $sql);
+  
   $resultado = array();
   if($entradas && mysqli_num_rows($entradas) >= 1){
     $resultado = $entradas;
